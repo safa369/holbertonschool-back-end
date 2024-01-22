@@ -6,9 +6,8 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """Show information about employee"""
     if len(argv) > 1:
-        id_emp = int(argv[1])
+        id_emp = argv[1]
         url = "https://jsonplaceholder.typicode.com/"
         req = requests.get("{}users/{}".format(url, id_emp))
         name_e = req.json().get("name")
@@ -17,11 +16,10 @@ if __name__ == "__main__":
                                      .format(url, id_emp)).json()
             all_tasks = len(req_to_do)
             completed_task = []
-            count = 0
             for t_c in req_to_do:
                 if t_c.get("completed") is True:
                     completed_task.append(t_c)
-                    count += 1
+                count = len(completed_task)
             print("Employee {} is done with tasks({} / {}):"
                   .format(name_e, count, all_tasks))
             for t in completed_task:
