@@ -4,6 +4,7 @@ a script that returns information about a given employee
 """
 
 if __name__ == "__main__":
+    """Show information about emplyee"""
     import requests
     from sys import argv
     if len(argv) > 1:
