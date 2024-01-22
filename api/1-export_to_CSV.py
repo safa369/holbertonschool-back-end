@@ -6,7 +6,6 @@ import json
 import requests
 
 
-
 if __name__ == "__main__":
     if len(argv) > 1:
         id_emp = argv[1]
