@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""a script that returns information for a given employee"""
+"""a script that returns information for a given employee."""
 from sys import argv
 import requests
 
