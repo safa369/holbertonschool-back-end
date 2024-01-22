@@ -2,9 +2,7 @@
 """a script that returns information for a given employee"""
 from sys import argv
 import csv
-import json
 import requests
-
 
 if __name__ == "__main__":
     if len(argv) > 1:
