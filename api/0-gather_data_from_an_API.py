@@ -3,10 +3,12 @@
 a script that returns information about a given employee
 """
 
+import requests
+from sys import argv
+
+
 if __name__ == "__main__":
-    """Show information about emplyee"""
-    import requests
-    from sys import argv
+    """Show information about employee"""
     if len(argv) > 1:
         id_emp = int(argv[1])
         url = "https://jsonplaceholder.typicode.com/"
