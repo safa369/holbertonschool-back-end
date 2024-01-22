@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """a script that returns information for a given employee"""
-
-import requests
 from sys import argv
-
+import requests
 
 if __name__ == "__main__":
     if len(argv) > 1:
