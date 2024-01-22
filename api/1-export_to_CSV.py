@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """a script that returns information for a given employee"""
+from sys import argv
 import csv
 import json
 import requests
-from sys import argv
+
 
 
 if __name__ == "__main__":
