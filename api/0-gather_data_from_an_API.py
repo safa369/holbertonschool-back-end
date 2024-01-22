@@ -9,8 +9,8 @@ if __name__ == "__main__":
     if len(argv) > 1:
         id_emp = argv[1]
         url = 'https://jsonplaceholder.typicode.com/'
-        req = requests.get('{}users/{}'.format(url, id_emp))
-        name_e = req.json().get("name")
+        req = requests.get('{}users/{}'.format(url, id_emp)).json()
+        name_e = req.get("name")
         if name_e is not None:
             req_to_do = requests.get("{}todos?userID={}"
                                      .format(url, id_emp)).json()
