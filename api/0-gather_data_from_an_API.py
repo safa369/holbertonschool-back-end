@@ -16,7 +16,7 @@ if __name__ == "__main__":
             all_tasks = len(req_to_do)
             completed_task = []
             for t_c in req_to_do:
-                if t_c.get("completed") == True:
+                if t_c.get("completed") is True:
                     completed_task.append(t_c)
             count = len(completed_task)
             print("Employee {} is done with tasks({}/{}):"
