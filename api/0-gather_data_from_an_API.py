@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """a script that returns information for a given employee."""
-from sys import argv
 import requests
+import sys
+
 
 if __name__ == "__main__":
-    if len(argv) > 1:
-        id_emp = argv[1]
+    if len(sys.argv) > 1:
+        id_emp = sys.argv[1]
         url = 'https://jsonplaceholder.typicode.com/'
         req = requests.get('{}users/{}'.format(url, id_emp)).json()
         name_e = req.get("name")
@@ -15,7 +16,7 @@ if __name__ == "__main__":
             all_tasks = len(req_to_do)
             completed_task = []
             for t_c in req_to_do:
-                if t_c.get("completed") is True:
+                if t_c.get("completed") == True:
                     completed_task.append(t_c)
             count = len(completed_task)
             print("Employee {} is done with tasks({}/{}):"
