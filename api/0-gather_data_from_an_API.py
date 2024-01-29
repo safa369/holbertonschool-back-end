@@ -13,7 +13,7 @@ if __name__ == "__main__":
         if name_e is not None:
             req_to_do = requests.get("{}TODOS?userID={}"
                                      .format(url, id_emp)).json()
-            all_tasks = len(req_to_do)
+            all_tasks = len(req_to_do.get("task"))
             completed_task = [t_c for t_c in req_to_do
                               if t_c.get("completed") is True]
             count = len(completed_task)
