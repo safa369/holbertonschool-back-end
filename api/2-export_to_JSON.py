@@ -12,12 +12,13 @@ if __name__ == "__main__":
         req = requests.get(url + 'users/{}'.format(id_emp)).json()
         name_e = req.get("name")
         username = req.get("username")
-        req_to_do = requests.get(url + "todos?userID={}"
+        req_to_do = requests.get(url + "todos?userId={}"
                                  .format(id_emp)).json()
         all_tasks = len(req_to_do)
         with open('{}.json'.format(id_emp), 'w') as file:
-            json.dump({id_emp: [{
+            data = {id_emp: [{
                 "task": (t_c.get("title")),
                 "completed": (t_c.get("completed")),
                 "username": username}
-                for t_c in req_to_do]}, file)
+                for t_c in req_to_do]}
+            json.dump(data, file)
